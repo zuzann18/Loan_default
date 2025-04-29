@@ -97,5 +97,49 @@ For academic and non-commercial use only. Dataset and intellectual property © G
 - SHAP documentation: https://shap.readthedocs.io
 
 ---
+TODO
+1) Features in the shap on the bar plot
+2) mice and preprocsessing new bug with smote
+   ---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+Cell In[155], line 3
+      1 # Apply SMOTE only on training data
+      2 smote = SMOTE(random_state=42)
+----> 3 X_train_resampled, y_train_resampled = smote.fit_resample(X_train, y_train)
+      4 # Plot class distribution after SMOTE
+      5 plt.figure(figsize=(6,4))
+
+File c:\Users\zuzan\AppData\Local\Programs\Python\Python311\Lib\site-packages\imblearn\base.py:208, in BaseSampler.fit_resample(self, X, y)
+    187 """Resample the dataset.
+    188 
+    189 Parameters
+   (...)
+    205     The corresponding label of `X_resampled`.
+    206 """
+    207 self._validate_params()
+--> 208 return super().fit_resample(X, y)
+
+File c:\Users\zuzan\AppData\Local\Programs\Python\Python311\Lib\site-packages\imblearn\base.py:106, in SamplerMixin.fit_resample(self, X, y)
+    104 check_classification_targets(y)
+    105 arrays_transformer = ArraysTransformer(X, y)
+--> 106 X, y, binarize_y = self._check_X_y(X, y)
+    108 self.sampling_strategy_ = check_sampling_strategy(
+    109     self.sampling_strategy, y, self._sampling_type
+...
+    170     )
+--> 171 raise ValueError(msg_err)
+
+ValueError: Input X contains NaN.
+
+4) transformaion log? check outliers
+5) econding categorical variables-. order cat_cols = X.select_dtypes(include='object').columns
+for col in cat_cols:
+    X[col] = LabelEncoder().fit_transform(X[col])
+   To prepare the features for modeling, a column-wise preprocessing pipeline is constructed using `ColumnTransformer`.  
+- **Numerical features** are standardized to zero mean and unit variance using `StandardScaler`, which often improves convergence and model interpretability.
+- **Categorical features** are one-hot encoded (with the first category dropped to avoid multicollinearity), allowing models to treat categorical values as separate, independent features.
+  
+- 
+
 
 
