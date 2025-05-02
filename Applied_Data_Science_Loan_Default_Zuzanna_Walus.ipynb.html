@@ -19178,14 +19178,14 @@ Post-hoc Games-Howell:
  [  30  108]]
 </code></pre>
 </li>
-<li><strong>chi2 = 12.76, p = 0.000</strong></li>
+<li><strong>chi2 = 12.76, p = 0</strong></li>
 <li><em>Interpretation</em>: McNemar’s test assesses the differences in classification errors between two models on the same test set.</li>
 <li><strong>Conclusion:</strong> p &lt; 0.05 shows there is a significant difference in the pattern of misclassifications.<br />
 This suggests that while overall metrics (like mean F1) may be similar, the models make errors on different samples.</li>
 </ul>
 <hr />
 <h3 id="4.-Cochran%E2%80%99s-Q-Test">4. <strong>Cochran&#8217;s Q Test</strong><a class="anchor-link" href="#4.-Cochran%E2%80%99s-Q-Test">&#182;</a></h3><ul>
-<li><strong>Statistic = 0.000</strong></li>
+<li><strong>Statistic = 0</strong></li>
 <li><em>Interpretation</em>: This tests whether there are differences in performance among multiple classifiers across the same dataset.</li>
 <li><strong>Conclusion:</strong> Here, the value indicates no significant difference detected—possibly due to the specific configuration or high agreement among predictions.</li>
 </ul>
@@ -19448,104 +19448,6 @@ The post-hoc Games-Howell analysis reinforces that ensemble methods (Random Fore
 </div>
 </div>
 </div>
-</div><div  class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[42]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span>
-
-<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">| Test                | Statistic | p-value   | Interpretation                          |</span>
-<span class="s2">|---------------------|-----------|-----------|-----------------------------------------|</span>
-<span class="s2">| Wilcoxon            | 3.00      | 0.312     | No significant difference (XGB vs RF)   |</span>
-<span class="s2">| T-test              | 0.487     | 0.639     | No significant difference (XGB vs RF)   |</span>
-<span class="s2">| Kruskal-Wallis      | 9.62      | 0.008     | Significant difference between models   |</span>
-<span class="s2">| McNemar             | 12.76     | 0.000     | Significant difference in error pattern |</span>
-<span class="s2">| Welch ANOVA         | 105.11    | 0.000002  | Significant difference between means    |</span>
-<span class="s2">| Games-Howell (RF-XGB) | -0.487  | 0.879     | No significant difference (RF vs XGB)   |</span>
-<span class="s2">&quot;&quot;&quot;</span><span class="p">))</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-OutputArea-output " data-mime-type="text/markdown">
-<table>
-<thead>
-<tr>
-  <th>Test</th>
-  <th>Statistic</th>
-  <th>p-value</th>
-  <th>Interpretation</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-  <td>Wilcoxon</td>
-  <td>3.00</td>
-  <td>0.312</td>
-  <td>No significant difference (XGB vs RF)</td>
-</tr>
-<tr>
-  <td>T-test</td>
-  <td>0.487</td>
-  <td>0.639</td>
-  <td>No significant difference (XGB vs RF)</td>
-</tr>
-<tr>
-  <td>Kruskal-Wallis</td>
-  <td>9.62</td>
-  <td>0.008</td>
-  <td>Significant difference between models</td>
-</tr>
-<tr>
-  <td>McNemar</td>
-  <td>12.76</td>
-  <td>0.000</td>
-  <td>Significant difference in error pattern</td>
-</tr>
-<tr>
-  <td>Welch ANOVA</td>
-  <td>105.11</td>
-  <td>0.000002</td>
-  <td>Significant difference between means</td>
-</tr>
-<tr>
-  <td>Games-Howell (RF-XGB)</td>
-  <td>-0.487</td>
-  <td>0.879</td>
-  <td>No significant difference (RF vs XGB)</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
 </div>
 <div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -20516,7 +20418,6 @@ ROC AUC: 0.8137127667279351
 </ul>
 </li>
 </ul>
-<p>Overall, the model demonstrates robust performance on the majority class while ensuring that a substantial proportion of defaulters are detected, satisfying key business priorities.</p>
 
 </div>
 </div>
@@ -20728,12 +20629,12 @@ Compare the performance of the current tuned ensemble models (Random Forest and 
 </div>
 </div>
 </div>
-</div><div  class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div  class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">nbformat</span>
@@ -20761,27 +20662,6 @@ Compare the performance of the current tuned ensemble models (Random Forest and 
      </div>
 </div>
 </div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Notebook successfully exported to Applied_Data_Science_Loan_Default_Zuzanna_Walus.ipynb.html
-</pre>
-</div>
-</div>
-
-</div>
-
 </div>
 
 </div>
