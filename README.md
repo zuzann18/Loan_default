@@ -122,23 +122,7 @@ File c:\Users\zuzan\AppData\Local\Programs\Python\Python311\Lib\site-packages\im
 File c:\Users\zuzan\AppData\Local\Programs\Python\Python311\Lib\site-packages\imblearn\base.py:106, in SamplerMixin.fit_resample(self, X, y)
     104 check_classification_targets(y)
     105 arrays_transformer = ArraysTransformer(X, y)
---> 106 X, y, binarize_y = self._check_X_y(X, y)
-    108 self.sampling_strategy_ = check_sampling_strategy(
-    109     self.sampling_strategy, y, self._sampling_type
-...
-    170     )
---> 171 raise ValueError(msg_err)
 
-ValueError: Input X contains NaN.
-
-4) transformaion log? check outliers
-5) econding categorical variables-. order cat_cols = X.select_dtypes(include='object').columns
-for col in cat_cols:
-    X[col] = LabelEncoder().fit_transform(X[col])
-   To prepare the features for modeling, a column-wise preprocessing pipeline is constructed using `ColumnTransformer`.  
-- **Numerical features** are standardized to zero mean and unit variance using `StandardScaler`, which often improves convergence and model interpretability.
-- **Categorical features** are one-hot encoded (with the first category dropped to avoid multicollinearity), allowing models to treat categorical values as separate, independent features.
-  
 - 
 
 
